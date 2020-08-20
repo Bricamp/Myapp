@@ -9,6 +9,6 @@
 
     <body>
         <div class="contenedor">
-            <h4> {{ $post }}</h4>
+            <h4> {{ $post->id }}</h4>
         </div>
     <body

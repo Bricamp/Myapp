@@ -35,7 +35,7 @@ class PostController extends Controller
     }
     public function displayPost($id)
     {
-        $post = DB::table("posts")->where('id', $id);
+        $post = DB::table("posts")->where('id', $id)->first();
         return view("displaypost")->with('post', $post);
     }
 
