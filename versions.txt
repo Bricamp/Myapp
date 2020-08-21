@@ -1,0 +1,2 @@
+1.0.0 -> Agregada barra de navegación
+1.0.1 -> Agregado el menu de login a traves de middleware Auth
