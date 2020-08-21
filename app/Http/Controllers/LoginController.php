@@ -11,22 +11,21 @@ class LoginController extends Controller
     //
 
 
-
     public function checkLogin(Request $request)
     {
         $this->validate($request, [
-        "email" => 'required|email',
-         "password" => 'required|alphaNum|min:3'
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8']
         ]);
 
         $userData = array(
-            'email' => $request->get('email'),
-            'password' => $request->get('password')
+            'email' => $request['email'],
+            'password' => $request['password']
         );
 
         if(Auth::attempt($userData))
         {
-            return redirect('/index');
+            return redirect('/');
         }
 
         else

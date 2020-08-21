@@ -1,5 +1,12 @@
 @extends('layout/layout')
 
+<script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -12,7 +19,7 @@
 
     <div class="contenedor">
         @include('partial/menu-nav')
-        <h1>BIENVENIDOS A BLOG</h1>
+        <h1>Bienvenidos al Blog!</h1>
             <div class="content-index">
 
             </div>
