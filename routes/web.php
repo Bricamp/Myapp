@@ -14,10 +14,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('welcome');
+//Incio
+Route::get('/', 'HomeController@home')->name('home');
 
-Route::view('/createpost', 'formpost')->name('formpost');
-Route::post('/createpost', 'PostController@createPost')->name('createpost');
-
+//Ver Posts
 Route::get('/viewposts', 'PostController@viewPosts')->name('viewposts');
 Route::get('/viewposts/{id}', 'PostController@displayPost')->name('displaypost');
+
+//Registrarse
+
+//Login
+
+//Crear Posts
+Route::view('/formpost', 'formpost')->name('formpost')->middleware('auth');
+Route::post('/formpost', 'PostController@formPost')->name('formpost')->middleware('auth');
+
+
+//Logout
+Route::get('/logout', 'LoginController@logout')->name('logout');
+
+
+
+#Route::get('/login', 'LoginController@showLogin')->name('showlogin');
+
+Route::get('/login', 'LoginController@showLogin')->name('showlogin');
+
+//Route::post('/login', 'LoginController@checkLogin')->name('checklogin');
+
+
+//Route::get('/', 'LoginController@successLogin')->name('successlogin');

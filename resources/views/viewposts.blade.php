@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout/layout')
 
 
 <!DOCTYPE html>
@@ -9,6 +9,7 @@
 
     <body>
         <div class="contenedor">
+            @include('partial/menu-nav')
             <h1>POSTS</h1>
             <div class="bloque-posts">
                 @foreach ($posts as $item)
@@ -45,9 +46,7 @@
                 <div class= "row justify-content-center">
                     {!! $posts->links() !!}
                 </div>
-                <div  class= "row justify-content-center">
-                    <a href={{ route('welcome') }} class="btn btn-primary">Volver</a>
-                </div>
+
             </div>
         </div>
     <body>

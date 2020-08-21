@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout/layout')
 
 <!DOCTYPE html>
 <html lang="es">
@@ -23,9 +23,11 @@
 
     <body>
         <div class="contenedor">
+            @include('partial/menu-nav')
+
             <div class="bloque">
                 <h1>Crear Post</h1>
-                    <form action="{{ route('post') }}" method="POST">
+                    <form action={{ route('formpost') }} method="POST">
                         <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                         <div class="form-group row">
                             <label for="Name" class="col-sm-2 col-form-label">Autor</label>
@@ -42,18 +44,18 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="Titulo" class="col-sm-2 col-form-label">Descripción</label>
+                            <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                             <div class="col-sm-10">
                                 <input type="text" name="subject" id="2">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <textarea name="content" id='3'></textarea>
+                            <textarea name="content" id='S3'></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary"> Guardar </button>
-                        <a href={{ route('welcome') }} class="btn btn-primary"> Volver </a>
+                        <a href={{ route('home') }} class="btn btn-primary"> Volver </a>
                     </form>
 
                 </div>

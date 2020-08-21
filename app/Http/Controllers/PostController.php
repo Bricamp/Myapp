@@ -10,15 +10,20 @@ use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
     //
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['formPost']);
+    }
     public function viewPosts()
     {
-        $posts = DB::table('posts')->paginate(4);
+        $posts = DB::table('posts')->paginate(6);
         return view("viewposts")->with(array('posts' => $posts));
     }
 
 
 
-    public function createPost(Request $request)
+    public function formPost(Request $request)
     {
 
         $post = new Posts();
@@ -31,7 +36,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return view('welcome');
+        return view('index');
     }
     public function displayPost($id)
     {

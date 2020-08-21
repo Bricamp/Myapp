@@ -17,6 +17,9 @@ h1 {
     background: #ffff;
     height: 100%;
     width: 70%;
+    border: 0.5px solid;
+    border-color: lightgrey;
+
 }
 
 .bloque{
@@ -59,7 +62,7 @@ form {
   display: inline-block;
 }
 
-.contenedor-welcome {
+.contenedor-index {
   background: #ffff;
   position: absolute;
   top: 50%;
@@ -70,7 +73,7 @@ form {
   overflow: visible;
 }
 
-.content-welcome{
+.content-index{
   padding-top: 100px;
 }
 
@@ -116,6 +119,6 @@ a.bloque-post-contenido {
     text-decoration: inherit;
   }
 
-  a.bloque-post-contenido:hover{
+a.bloque-post-contenido:hover{
       color: gray;
   }
