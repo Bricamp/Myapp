@@ -10,7 +10,7 @@
     <body>
         <div class="contenedor">
             @include('partial/menu-nav')
-            <h1>POSTS</h1>
+            <h1>Posts</h1>
             <div class="bloque-posts">
                 @foreach ($posts as $item)
                 <a href ={{ route("displaypost", ['id' => $item->id]) }} class="bloque-post-contenido">

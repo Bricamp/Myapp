@@ -13,36 +13,31 @@
     <body>
         <div class="bloque">
             <h1>Login</h1>
-            @if ($mensaje = Session::get('error'))
-            <div class="alert alert-danger alert-block">
-                <button type="button" class="none" data-dismiss="alert">x</button>
-                <strong> {{ $mensaje }} </strong>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
             @endif
 
-            @if(count($errors) > 0 )
-            <div class="alert alert-danger">
-                <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}
-                @endforeach
-
-            @endif
-                <form action={{ route('checklogin') }} method="POST">
-                    <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
-                    <div class="form-group row">
-                        <label for="e-mail" class="col-sm-2 col-form-label">E-mail</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="e-mail">
-                        </div>
+            <form action={{ route('checklogin') }} method="POST">
+                <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+                <div class="form-group row">
+                    <label for="e-mail" class="col-sm-2 col-form-label">E-mail</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="e-mail">
                     </div>
-                    <div class="form-group row">
-                        <label for="pass" class="col-sm-2 col-form-label">Password</label>
-                        <div clas="col-sm-10">
-                            <input type="password" class="form-control" id="pass" >
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label for="pass" class="col-sm-2 col-form-label">Password</label>
+                    <div clas="col-sm-10">
+                        <input type="password" class="form-control" id="pass" >
                     </div>
-                    <button type="submit" class="btn btn-primary"> Guardar </button>
+                </div>
+                <button type="submit" class="btn btn-primary"> Guardar </button>
             </form>
         </div>
     </body>
