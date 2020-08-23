@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Dotenv\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 
 class LoginController extends Controller
 {
     //
 
+use AuthenticatesUsers;
 
     public function checkLogin(Request $request)
     {
@@ -38,6 +41,6 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('login');
+        return redirect('/');
     }
 }

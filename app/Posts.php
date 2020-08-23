@@ -13,6 +13,7 @@ class Posts extends Model
     protected $subject;
     protected $content;
     protected $date;
+    protected $views = 0;
     public $timestamps = false;
 
 

@@ -17,7 +17,7 @@ class PostController extends Controller
     }
     public function viewPosts()
     {
-        $posts = DB::table('posts')->paginate(6);
+        $posts = Posts::paginate(6);
         return view("viewposts")->with(array('posts' => $posts));
     }
 
@@ -40,7 +40,11 @@ class PostController extends Controller
     }
     public function displayPost($id)
     {
-        $post = DB::table("posts")->where('id', $id)->first();
+        $post = Posts::where('id', $id)->first();
+        $post->views += 1;
+
+        $post->save();
+
         return view("displaypost")->with('post', $post);
     }
 

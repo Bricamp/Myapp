@@ -21,8 +21,8 @@ h1 {
 .contenedor{
     position: absolute;
     text-align: center;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 15%;
+    margin-right: 15%   ;
     background: #ffff;
     height: 100%;
     width: 70%;
@@ -31,9 +31,11 @@ h1 {
 
 }
 
-.bloque{
+.child-contenedor{
     background: #ffff;
     text-align: center;
+    border: none;
+    height: auto;
 }
 
 .navegacion{
@@ -71,15 +73,10 @@ form {
   display: inline-block;
 }
 
-.contenedor-index {
-  background: #ffff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  overflow: visible;
+.ajustado-centro{
+    background: #ffff;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .content-index{

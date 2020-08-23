@@ -1,5 +1,6 @@
 @extends('layout/layout')
 
+
 <!DOCTYPE html>
 <html lang="es">
     <script src="https://cdn.tiny.cloud/1/nphh3ykughg72sc7zdtbff5v55l6n3e2trjpoinmn3j8c3j4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
