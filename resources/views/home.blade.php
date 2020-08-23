@@ -41,7 +41,7 @@
         animationEnabled: true,
         //theme: "light2",
         title:{
-            text: "Numero de visitantes"
+            text: "Numero de visitas"
         },
         axisX:{
             crosshair: {
