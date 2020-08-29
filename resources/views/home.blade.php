@@ -64,7 +64,7 @@
             type: "area",
             dataPoints: <?php echo json_encode(
                         array(
-                        array("label"=> $visitantes->date, "y"=> $visitantes->visitas)
+                        array("label"=> $visitantes->created_at->format('Y-m-d'), "y"=> $visitantes->visitas )
                         ),
                         JSON_HEX_TAG);
                         ?>
