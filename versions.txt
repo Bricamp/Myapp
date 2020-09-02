@@ -2,3 +2,4 @@
 1.0.1 -> Agregado el menu de login a traves de middleware Auth
 1.0.2 -> Agregado grafico, contador de visualizaciones
 1.0.3 -> Agregado las migraciones y arreglado algunos convenciones de codigo
+1.0.4 -> Se unificaron los archivos de css y js (laravel mix) y se agregaron los seeders.
