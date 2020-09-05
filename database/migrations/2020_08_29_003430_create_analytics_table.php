@@ -15,7 +15,7 @@ class CreateAnalyticsTable extends Migration
     {
         Schema::create('analytics', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->int('visitas');
+            $table->integer('visitas');
             $table->timestamps();
         });
     }

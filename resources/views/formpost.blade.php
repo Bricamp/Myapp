@@ -28,7 +28,7 @@
 
             <div class="bloque">
                 <h1>Crear Post</h1>
-                    <form action={{ route('formpost') }} method="POST">
+                    <form action="{{ route('formpost') }}" method="POST">
                         <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                         <div class="form-group row">
                             <label for="Name" class="col-sm-2 col-form-label">Autor</label>
@@ -56,7 +56,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary"> Guardar </button>
-                        <a href={{ route('home') }} class="btn btn-primary"> Volver </a>
+                        <a href="{{ route('home') }}" class="btn btn-primary"> Volver </a>
                     </form>
 
                 </div>
