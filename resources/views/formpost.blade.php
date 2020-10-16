@@ -24,7 +24,7 @@
 
     <body>
         <div class="contenedor">
-            @include('partial/menu-nav')
+            @include('menu/menu-nav')
 
             <div class="bloque">
                 <h1>Crear Post</h1>

@@ -2,9 +2,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     @if(Auth::check())
-        <div class="navbar-brand">
-            {{ Auth::user()->name }}
-        </div>
+        <a class="navbar-brand" href={{ route('editProfile')}}>
+            {{ Auth::user()->username }}
+        </a>
     @endif
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,9 +22,11 @@
             </li>
 
             @if(Auth::check())
-                <li class="nav-item">
-                    <a class="nav-link" href={{ route('formpost') }}>Crear Post</a>
-                </li>
+                @if(Auth::user()->hasRole(['userCreator', 'userAdmin']))
+                    <li class="nav-item">
+                        <a class="nav-link" href={{ route('formpost') }}>Crear Post</a>
+                    </li>
+                @endif
             @endif
         </ul>
 

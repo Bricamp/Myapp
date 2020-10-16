@@ -12,13 +12,11 @@ class LoginController extends Controller
 {
     //
 
-use AuthenticatesUsers;
-
     public function checkLogin(Request $request)
     {
         $this->validate($request, [
             'email' => ['required', 'string', 'email', 'max:255'],
-            'password' => ['required', 'string', 'min:8']
+            'password' => ['required', 'string']
         ]);
 
         $userData = array(
@@ -28,12 +26,13 @@ use AuthenticatesUsers;
 
         if(Auth::attempt($userData))
         {
+
             return redirect('/');
         }
 
         else
         {
-            return back()->with('error', 'Usuario o contraseña incorrecta');
+            return redirect()->route('login')->withErrors(['password'=>'Usuario o contraseña incorrecta']);
         }
     }
 

@@ -23,7 +23,7 @@
 
     <body>
         <div class="contenedor">
-            @include('partial/menu-nav')
+            @include('menu/menu-nav')
             <h1>Bienvenidos al Blog!</h1>
             <div class="contenedor child-contenedor">
                 <div id="chartContainer" style="height: 350px; width: 95%;"></div>

@@ -49905,9 +49905,9 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\scamp\Desktop\Myapp\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\scamp\Desktop\Myapp\resources\js\scripts.js */"./resources/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\scamp\Desktop\Myapp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/brise/Documents/Myapp/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/brise/Documents/Myapp/resources/js/scripts.js */"./resources/js/scripts.js");
+module.exports = __webpack_require__(/*! /home/brise/Documents/Myapp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

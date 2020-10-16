@@ -9,7 +9,7 @@
 
     <body>
         <div class="contenedor">
-            @include('partial/menu-nav')
+            @include('menu/menu-nav')
             <h1>Posts</h1>
             <div class="bloque-posts">
                 @foreach ($posts as $item)

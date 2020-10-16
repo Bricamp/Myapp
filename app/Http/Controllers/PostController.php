@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
+use App\User;
 use Illuminate\Http\Request;
 use App\Post;
 use Symfony\Component\Console\Input\Input;
@@ -14,6 +16,7 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->only(['formPost']);
+
     }
     public function viewPosts()
     {
@@ -43,8 +46,13 @@ class PostController extends Controller
         $post->views += 1;
         $post->save();
 
-        return view("displaypost")->with('post', $post);
+
+        $comments_userid = Comment::where('post_id', $id)->with('users')->paginate(6);
+
+
+        return view("displaypost")->with(['post' => $post, 'comments' => $comments_userid] );
     }
+
 
 
 }

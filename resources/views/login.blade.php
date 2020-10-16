@@ -6,12 +6,12 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Registrarse</title>
+        <title>Login</title>
     </head>
 
     <body>
         <div class="contenedor">
-            @include('partial/menu-nav')
+            @include('menu/menu-nav')
 
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -19,8 +19,12 @@
                         <div class="card-header">'Login'</div>
 
                         <div class="card-body">
-                            <form method="POST" action="{{ route('checklogin') }}">
-                                <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+                            @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+
+                            <form method="post" action="{{ route('checklogin') }}">
+                                <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
 
                                 <div class="form-group row">
                                     <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
@@ -36,7 +40,6 @@
 
                                     <div class="col-md-6">
                                         <input id="password" type="password" class="form-control "name="password" required autocomplete="current-password">
-
 
                                     </div>
                                 </div>

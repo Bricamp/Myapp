@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +24,11 @@ Route::get('/viewposts/{id}', 'PostController@displayPost')->name('displaypost')
 
 //Registrarse
 Route::view('/register', 'register')->name('register');
-Route::post('/register', 'RegisterController@createUser')->name('createUser');
+Route::post('/register', 'UserController@createUser')->name('createUser');
+
+//Perfil Usuario
+Route::view('/editprofile', 'editProfile')->name('editProfile');
+Route::post('/editprofile', 'UserController@editProfile')->name('editPassword');
 
 
 //Login
@@ -32,11 +36,13 @@ Route::view('/login', 'login')->name('login');
 Route::post('/login', 'LoginController@checkLogin')->name('checklogin');
 
 //Crear Posts
-Route::view('/formpost', 'formpost')->name('formpost')->middleware('auth');
-Route::post('/formpost', 'PostController@formPost')->name('formpost')->middleware('auth');
+Route::view('/formpost', 'formpost')->name('formpost');
+Route::post('/formpost', 'PostController@formPost')->name('formpost');
 
+//Añadir comentario
+Route::post('/viewposts', 'CommentController@saveComment')->name('addcomment');
 
-//Logout
+//Logoutviewposts
 Route::get('/logout', 'LoginController@logout')->name('logout');
 
 
