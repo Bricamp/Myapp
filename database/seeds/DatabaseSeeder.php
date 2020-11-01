@@ -18,5 +18,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call(RoleTableSeeder::class);
 
+
+        App\User::first()->roles()->attach(App\Role::find(1));
+        App\User::first()->roles()->attach(App\Role::find(2));
+        App\User::first()->roles()->attach(App\Role::find(3));
+
+
     }
 }

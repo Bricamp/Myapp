@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     @if(Auth::check())
         <a class="navbar-brand" href={{ route('editProfile')}}>
@@ -21,16 +19,24 @@
                 <a class="nav-link" href={{ route('viewposts') }}>Blog</a>
             </li>
 
-            @if(Auth::check())
-                @if(Auth::user()->hasRole(['userCreator', 'userAdmin']))
-                    <li class="nav-item">
-                        <a class="nav-link" href={{ route('formpost') }}>Crear Post</a>
-                    </li>
+
+
+            @if(Auth::user())
+                @if(Auth::user()->hasRole('admin'))
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administración
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ route('viewusers') }}">Usuarios</a>
+                        <a class="dropdown-item" href="#">Estadísticas</a>
+                    </div>
                 @endif
             @endif
+
         </ul>
 
-        @if(Auth::check())
+        @if(Auth::user())
             <span class="navbar-text">
                 <a class="nav-link" href={{  route('logout') }}>Log out</a>
             </span>

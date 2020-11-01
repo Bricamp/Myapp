@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRole
 {
@@ -15,9 +16,17 @@ class CheckRole
      */
     public function handle($request, Closure $next, $role)
     {
-        if (! $request->user()->hasRole($role)) {
-            abort(404);
+        if (Auth::user()){
+            if ($request->user()->hasRole($role)) {
+                return $next($request);
+            }
+            else{
+                return abort(404);
+            }
         }
-        return $next($request);
+        else{
+            return abort(404);
+        }
+
     }
 }

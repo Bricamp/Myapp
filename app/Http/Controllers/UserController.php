@@ -31,10 +31,10 @@ class UserController extends Controller
     */
 
 
-    // public function __construct()
-    // {
-    //     $this->middleware(['auth'])->only(['editProfile']);
-    // }
+    public function __construct()
+    {
+        $this->middleware(['auth'])->only(['editProfile']);
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -60,7 +60,13 @@ class UserController extends Controller
         return redirect()->route('home')->with('alert', 'Usuario Creado Correctamente!');
     }
 
-    public function editProfile(Request $request)
+    public function editProfile()
+    {
+        return view('editProfile');
+    }
+
+
+    public function post_editProfile(Request $request)
     {
 
             $requestData = $request->All();

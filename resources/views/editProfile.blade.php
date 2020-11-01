@@ -1,9 +1,10 @@
-@extends('layout/layout')
 
 <!DOCTYPE html>
 <html lang="es">
 
     <head>
+        @extends('layout/layout')
+
         <meta charset="utf-8">
     </head>
     <div class="contenedor">

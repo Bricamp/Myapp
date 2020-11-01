@@ -1,9 +1,8 @@
-@extends('layout/layout')
-
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        @extends('layout/layout')
+
         <meta charset="utf-8">
 
         <title>Registrarse</title>
@@ -18,8 +17,8 @@
                         <div class="card-header"> Registrarse </div>
 
                         <div class="card-body">
-                            <form method="POST" action="{{ route('createUser') }}">
-                                <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+                            <form method="post" action="{{ route('post_register') }}">
+                                <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
 
                                 <div class="form-group row">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">Nombre</label>

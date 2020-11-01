@@ -1,14 +1,20 @@
-@extends('layout/layout')
 
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
+        @extends('layout/layout')
+
     </head>
 
     <body>
         <div class="container borde">
             @include('menu/menu-nav')
+            <form action={{ route('editPost')}}  method="post">
+                @csrf
+                <input name="post_id" type="hidden" value={{ $post->id }}>
+                <button type="submit" class="btn btn-secondary"> Editar </button>
+            </form>
 
             <div class="row">
                 <h1> {{ $post->title }}</h1>
@@ -55,9 +61,6 @@
                                 <button type="submit" class="btn btn-primary"> Guardar </button>
                             </div>
 
-                            <div class="col">
-                                <a href={{ route('viewposts') }} class="btn btn-primary" > Volver </a>
-                            </div>
                         </div>
                     </form>
                 @endif

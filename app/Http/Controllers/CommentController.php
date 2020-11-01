@@ -10,7 +10,9 @@ class CommentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'role:user'])->only(['saveComment']);
+        $this->middleware('auth');
+        $this->middleware(['role:user,userAdmin'])->only(['saveComment']);
+
     }
 
     public function saveComment(Request $request)

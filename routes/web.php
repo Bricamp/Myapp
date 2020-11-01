@@ -20,24 +20,28 @@ Route::get('/', 'HomeController@home')->name('home');
 
 //Ver Posts
 Route::get('/viewposts', 'PostController@viewPosts')->name('viewposts');
-Route::get('/viewposts/{id}', 'PostController@displayPost')->name('displaypost');
+Route::get('/viewposts/{id}', 'PostController@displayPost')->name('viewposts/id');
 
 //Registrarse
 Route::view('/register', 'register')->name('register');
-Route::post('/register', 'UserController@createUser')->name('createUser');
+Route::post('/register', 'UserController@createUser')->name('post_register');
 
 //Perfil Usuario
-Route::view('/editprofile', 'editProfile')->name('editProfile');
-Route::post('/editprofile', 'UserController@editProfile')->name('editPassword');
-
+Route::get('/editprofile', 'UserController@editProfile')->name('editProfile');
+Route::post('/editprofile', 'UserController@post_editProfile')->name('post_editProfile');
 
 //Login
-Route::view('/login', 'login')->name('login');
-Route::post('/login', 'LoginController@checkLogin')->name('checklogin');
+Route::get('/login', 'LoginController@login')->name('login');
+Route::post('/login', 'LoginController@checkLogin')->name('post_login');
 
 //Crear Posts
-Route::view('/formpost', 'formpost')->name('formpost');
-Route::post('/formpost', 'PostController@formPost')->name('formpost');
+Route::get('/post', 'PostController@createPost')->name('createpost');
+Route::post('/post', 'PostController@post_createPost')->name('post_createpost');
+
+//Editar Posts
+Route::post('/editpost', 'PostController@post_editPost')->name('editPost');
+Route::post('/updatepost', 'PostController@post_updatePost')->name('post_updatepost');
+Route::view('/editpost', 'post_editPost')->name('post_editpost');
 
 //Añadir comentario
 Route::post('/viewposts', 'CommentController@saveComment')->name('addcomment');
@@ -46,6 +50,12 @@ Route::post('/viewposts', 'CommentController@saveComment')->name('addcomment');
 Route::get('/logout', 'LoginController@logout')->name('logout');
 
 
+//Administrar usuarios
+Route::get('/viewusers', 'AdminController@viewUsers')->name('viewusers');
+
+Route::get('/phpinfo', function () {
+    phpinfo();
+});
 
 #Route::get('/login', 'LoginController@showLogin')->name('showlogin');
 

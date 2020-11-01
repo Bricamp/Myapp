@@ -1,10 +1,9 @@
-@extends('layout/layout')
 
 
 <!DOCTYPE html>
 <html lang="es">
-    <script src="https://cdn.tiny.cloud/1/nphh3ykughg72sc7zdtbff5v55l6n3e2trjpoinmn3j8c3j4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script type="text/javascript">
+    <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+    <script>
         tinymce.init({
         selector: "textarea",
         width: 600,
@@ -21,14 +20,15 @@
         margin: 15px;
             }
     </style>
-
+    <head>
+    </head>
     <body>
         <div class="contenedor">
             @include('menu/menu-nav')
 
             <div class="bloque">
-                <h1>Crear Post</h1>
-                    <form action="{{ route('formpost') }}" method="POST">
+                <h1>Post</h1>
+                    <form action="{{ route('post_createpost') }}" method="POST">
                         <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                         <div class="form-group row">
                             <label for="Name" class="col-sm-2 col-form-label">Autor</label>
@@ -61,5 +61,8 @@
 
                 </div>
             </div>
+
+        @extends('layout/layout')
+
     </body>
 </html>

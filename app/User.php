@@ -21,22 +21,26 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class)->withTimestamps();
+        return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
     }
 
     public function posts()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class, 'posts', 'user_id');
     }
 
 
-    public function hasRole($role)
+    public function hasRole($roles)
     {
-        if ($this->roles()->whereIn('name', $role)->get()) {
-            return true;
-        }
-        return false;
+            if ($this->roles()->where('name', $roles)->first()){
+                return true;
+            }
+            else{
+                return false;
+            }
     }
+
+
 
     public function hasAnyRole($roles)
     {

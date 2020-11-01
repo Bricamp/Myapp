@@ -49860,33 +49860,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/scripts.js":
-/*!*********************************!*\
-  !*** ./resources/js/scripts.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// ---------------------------------------------- //
-// Menu navegacion activo
-// ---------------------------------------------- //
-$(document).ready(function () {
-  $(function () {
-    var pagina = location.protocol + "//" + document.domain + "/" + location.pathname.split('/')[1];
-    $('a.nav-link').each(function () {
-      var target_URL = $(this).prop("href");
-
-      if (target_URL == pagina) {
-        $('a.nav-link').removeClass('active');
-        $(this).addClass('active');
-        return false;
-      }
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49899,15 +49872,14 @@ $(document).ready(function () {
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/scripts.js ./resources/sass/app.scss ***!
-  \***************************************************************************************/
+/*!*************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/brise/Documents/Myapp/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /home/brise/Documents/Myapp/resources/js/scripts.js */"./resources/js/scripts.js");
-module.exports = __webpack_require__(/*! /home/brise/Documents/Myapp/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\scamp\Documents\Proyectos PHP\Myapp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\scamp\Documents\Proyectos PHP\Myapp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

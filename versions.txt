@@ -4,4 +4,5 @@
 1.0.3   :     Agregado las migraciones y arreglado algunos convenciones de codigo
 1.0.4   :     Se unificaron los archivos de css y js (laravel mix) y se agregaron los seeders
 1.0.4.1 :     Arreglo de errores
-2.0.0   :     Agregado los roles, comentarios y edicion del perfil de usuario
+2.0.0   :     Agregado los roles, comentarios y creación de edición del perfil de usuario
+2.0.1   :     Agregado edición de post, eliminación grafico de HOME, corrección de algunas tablas
